@@ -39,50 +39,103 @@ objData2 = {...objData2, name:"Rahul"}
 
 console.log("objData2: ", objData2);
 
-// message = 1234   ( this provide error )
 
-// ( any type ) ( it is different from unknown as it provides error at run time)
-// let data1: any;
+// any type ( it is different from unknown as it provides error at run time)
+let anyData: any;
 
-// data1 = "Hello";       // No error
-// console.log("string any data1: ", data1);     // Output: Hello
+anyData = "Hello";       // No error
+console.log("string any anyData: ", anyData);     // Output: Hello
 
-// data1 = 42;            // No error
-// console.log("number any data1: ", data1);     // Output: 42
+anyData = 42;            // No error
+console.log("number any anyData: ", anyData);     // Output: 42
 
-// // console.log(data.toUpperCase());  ( this line provide error during run time)
-
-
-// // ( unknown type ) ( this provide error during compile time)
-// let data2: unknown;
-
-// data2 = "Hello";       // No error
-// console.log("string unknown data2: ", data2);     // Output: Hello
-
-// data2 = 42;            // No error
-// console.log("number unknown data2: ", data2);     // Output: 42   
-
-// if (typeof data2 === "string") {
-//     console.log(data2.toUpperCase());
-// }
-// // console.log(data2.toUpperCase()); ( this line provide error during compile time)
+// console.log(anyData.toUpperCase());  // ( this line provide error during run time)
 
 
-// // ( union  type )
-// let message3: string | number = "Gourav";
-// console.log("hello world union string ", message3);
-// message3 = 1234;
-// console.log("hello world union number", message3);
+// ( unknown type ) ( this provide error during compile time)
+let unknownData: unknown;
+
+unknownData = "Hello";       // No error
+console.log("string unknown unknownData: ", unknownData);     // Output: Hello
+
+unknownData = 42;            // No error
+console.log("number unknown unknownData: ", unknownData);     // Output: 42   
+
+if (typeof unknownData === "string") {
+    console.log(unknownData.toUpperCase());
+}
+
+// console.log(unknownData.toUpperCase());  //( this line provide error during compile time)
+
+// array type
+
+let numArr2: number[] = [1, 2, 3, 4, 5];
+let chatArr2: string[] = ["a", "b", "c"];
 
 
+// tuples
 
-// // ( void type)
-// function logMessage(message: string): void {
-//     console.log(message);   
-//     return
-// }
+let tupleData: [string, number] = ["Gourav", 25];
 
-// logMessage("Hello");
+let coordinates: [number, number,number] = [10, 20,30];  // ( x, y, z )
+
+// localhost:3000?name=Gourav&age=25
+let query: [string, number] = ["Gourav", 25];
+
+let response : [number, string] = [200, "SUCCESS"]; // http-response
+
+// tuples drawbacks or flaws
+response.push("Gourav");
+
+console.log("response: ", response);
+
+
+//enum
+enum Color {
+    Red = 1,
+    Green,
+    Blue,
+}
+
+let color : Color = Color.Green;
+console.log("color: ", color);
+
+const enum Size {
+    Small = 1,
+    Medium,
+    Large,
+}
+
+let size : Size = Size.Medium;
+console.log("size: ", size);
+
+
+// never type
+function infinite() : never {
+    while(true){
+        console.log("Hello World");
+    }
+}
+
+
+function throwError(message: string) : never {
+    throw new Error(message);
+}
+
+// ( void type)
+function logMessage(message: string): void {
+    console.log(message);   
+    return
+}
+
+logMessage("Hello");
+
+
+// ( union  type )
+let unionMessage: string | number = "Gourav";
+console.log("hello world unionMessage", unionMessage);
+unionMessage = 1234;
+console.log("hello world unionMessage", unionMessage);
 
 
 // // ( practical example of void type and never type )
