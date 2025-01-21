@@ -138,55 +138,20 @@ unionMessage = 1234;
 console.log("hello world unionMessage", unionMessage);
 
 
-// // ( practical example of void type and never type )
-// function processInput(input : string | number) : void | never{
-//     if(typeof input === "string"){
-//         console.log(input.toUpperCase());
-//     }else if(typeof input === "number"){
-//         throw new Error("Input is a number and it is not valid");
-//     }    
-// }
+// ( practical example of void type and never type )
+function processInput(input : string | number) : void | never{
+    if(typeof input === "string"){
+        console.log(input.toUpperCase());
+    }else if(typeof input === "number"){
+        throw new Error("Input is a number and it is not valid");
+    }    
+}
 
-// processInput("Gourav")
-
-// console.log("hello world");
+processInput("Gourav");
 
 
-// // ( rest paramenters in function )
-// function total(...numbers:number[]) : number {
-//     return numbers.reduce( ( prev,current ) => prev + current,0)
-// }
-
-// console.log(total(1,2,3,4,5));
-
-// // ( define the function parameter and return type )
-// let calculate : (x:number,y:number) => number
-
-// calculate = (a,b) => a + b
-
-// console.log(calculate(1,2));
 
 
-// // ( arrow function )
-// let multiply = ( x:number,y:number) => x * y
-
-// console.log(multiply(2,3));
-
-
-// // ( type alias )
-// type User = {
-//     id: string;
-//     name: string;
-//     age: number;
-// };
-
-// let user: User = {
-//     id: "U001",
-//     name: "Gourav",
-//     age: 25,
-// };
-
-// console.log(user);
 
 
 

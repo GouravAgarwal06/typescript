@@ -2,11 +2,37 @@
 type StringArray = string[];
 type NumberArray = number[];
 
-let message: StringArray = ["Alice", "Bob", "Charlie"];
-let data: NumberArray = [1, 2, 3, 4];
+let strArr: StringArray = ["Alice", "Bob", "Charlie"];
+let numberArr: NumberArray = [1, 2, 3, 4];
 
-console.log(message);
-console.log(data);
+console.log("strArr: ",strArr);
+console.log("numberArr: ",numberArr);
+
+
+
+// ( type alias )
+type student_Name = string;
+let student : student_Name = "Gourav";
+
+console.log("student: ", student);
+
+type User = {
+    id: string;
+    name: string;
+    age: number;
+};
+
+let user: User = {
+    id: "U001",
+    name: "Gourav",
+    age: 25,
+};
+
+console.log("user: ",user);
+
+type Status = "active" | "inactive" | "suspended";
+
+let accountStatus: Status = "active"; // Only these strings are allowed
 
 
 // ( alias for objects )
